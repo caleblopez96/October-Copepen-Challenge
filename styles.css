@@ -31,6 +31,7 @@ h2 {
     padding: 0.25em 0;
     letter-spacing: 0.125em;
     animation: shake 3s infinite;
+    animation-iteration-count: 3;
     color: #121212;
 }
 
@@ -51,7 +52,7 @@ a {
 
 p:hover {
     animation: shake 3s infinite;
-    color: #7701ff;
+    color: #9d0e0e;
 }
 
 @keyframes shake {
@@ -79,9 +80,10 @@ p:hover {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    font-size: 3.5em;
+    font-size: 3em;
     justify-content: center;
     align-items: center;
+    gap: .5em;
 }
 
 button {
@@ -106,7 +108,7 @@ button {
 }
 
 button:hover {
-    animation: shake 2s infinite;
+    animation: shake 4s infinite;
     @keyframes shake {
     10% {
         transform: scale(1) rotate(5deg);
@@ -125,12 +127,13 @@ button:hover {
 
 @media only screen and (max-width: 768px) {
     header {
-    font-size: 1.2em;
+    font-size: 1em;
+    text-align: center;
 }
     a {
     font-size: 3em;
 }
     .results {
-    font-size: 2.75em
+    font-size: 2em
 }
 }
