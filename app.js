@@ -1,3 +1,4 @@
+// selectors
 const pumpkin = document.querySelector(".pumpkin");
 
 const zombie = document.querySelector(".zombie");
@@ -6,24 +7,28 @@ const ghost = document.querySelector(".ghost");
 
 const vampire = document.querySelector(".vampire");
 
-const winner = document.querySelector(".winning-text");
+const winner = document.querySelector(".results-text");
 
-const btn = document.querySelector("button")
+const btn = document.querySelector('button');
 
-
+// function if trick
 const trick = (element) => {
     event.preventDefault();
     element.innerText = "💩";
     element.style.fontSize = "4em";
-    winner.innerText = "You found a trick💩! Try again!";
+    winner.innerText = "You found the trick💩! Try again!";
 };
 
+// function if treat
 const treat = (element) => {
     event.preventDefault();
     element.innerText = "🍬";
     element.style.fontSize = "4em";
     winner.innerText = "You found the treat🍬! Happy Halloween!";
 };
+
+// passing the callback functions to the click event
+// to determine outcome
 
 pumpkin.addEventListener("click", () => {
     trick(pumpkin);
@@ -41,24 +46,10 @@ vampire.addEventListener("click", () => {
     trick(vampire);
 });
 
+/* the play again button refreshes the page, so its not going to work on codepen.
+
 btn.addEventListener('click', ()=>{
     window.location.reload()
-})
-
-/* creating the logic to check if winning options has been chosen reset everything and make everything unclickalbe
-
-
-checkStatus = () => {
-    if (winner.textContent.includes('🍬')){
-        return true
-    } 
-    return false
-}
-
-*/
-
-/* 
-
-creating the logic to rng which goul is the treat and which ghouls are the treat. right now the ghost is the treat every time. I want it to be random
+}) 
 
 */
