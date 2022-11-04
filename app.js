@@ -11,6 +11,8 @@ const winner = document.querySelector(".results-text");
 
 const btn = document.querySelector('button');
 
+const allElements = [pumpkin, zombie, ghost, vampire];
+
 // function if trick
 const trick = (element) => {
     element.innerText = "💩";
@@ -25,7 +27,6 @@ const treat = (element) => {
     winner.innerText = "You found the treat🍬! Happy Halloween!";
 };
 
-const allElements = [pumpkin, zombie, ghost, vampire];
 
 // passing the callback functions to the click event
 // to determine outcome
