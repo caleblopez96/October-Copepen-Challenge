@@ -31,7 +31,7 @@ h2 {
     padding: 0.25em 0;
     letter-spacing: 0.125em;
     animation: shake 3s infinite;
-    animation-iteration-count: 3;
+    animation-iteration-count: 2;
     color: #121212;
 }
 
@@ -48,6 +48,10 @@ h2 {
 a {
     padding: 0.25em 0;
     font-size: 10em;
+}
+
+.ghoul-section:hover {
+    animation: shake 3s infinite;
 }
 
 p:hover {

@@ -7,7 +7,7 @@ const ghost = document.querySelector(".ghost");
 
 const vampire = document.querySelector(".vampire");
 
-const winner = document.querySelector(".results-text");
+const results = document.querySelector(".results-text");
 
 const btn = document.querySelector('button');
 
@@ -17,20 +17,19 @@ const allElements = [pumpkin, zombie, ghost, vampire];
 const trick = (element) => {
     element.innerText = "💩";
     element.style.fontSize = "4em";
-    winner.innerText = "You found the trick💩! Try again!";
+    results.innerText = "You found the trick💩! Try again!";
 };
 
 // function if treat
 const treat = (element) => {
     element.innerText = "🍬";
     element.style.fontSize = "4em";
-    winner.innerText = "You found the treat🍬! Happy Halloween!";
+    results.innerText = "You found the treat🍬! Happy Halloween!";
 };
 
 
-// passing the callback functions to the click event
-// to determine outcome
-
+// event handlers
+// receiving the callback of trick() or treat() depending on 'chosen'
 pumpkin.addEventListener("click", (event) => {
     event.preventDefault()
     chosen === pumpkin ? treat(pumpkin) : trick(pumpkin);
@@ -51,10 +50,10 @@ vampire.addEventListener("click", (event) => {
     chosen === vampire ? treat(vampire) : trick(vampire);
 });
 
+// randomly selects an element (ghoul)
 const chosen = allElements[Math.floor(Math.random() * allElements.length)];
 
 /* the play again button refreshes the page, so its not going to work on codepen. */
-
 btn.addEventListener('click', ()=>{
     window.location.reload()
 }) 
