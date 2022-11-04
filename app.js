@@ -13,7 +13,6 @@ const btn = document.querySelector('button');
 
 // function if trick
 const trick = (element) => {
-    event.preventDefault();
     element.innerText = "💩";
     element.style.fontSize = "4em";
     winner.innerText = "You found the trick💩! Try again!";
@@ -21,35 +20,40 @@ const trick = (element) => {
 
 // function if treat
 const treat = (element) => {
-    event.preventDefault();
     element.innerText = "🍬";
     element.style.fontSize = "4em";
     winner.innerText = "You found the treat🍬! Happy Halloween!";
 };
 
+const allElements = [pumpkin, zombie, ghost, vampire];
+
 // passing the callback functions to the click event
 // to determine outcome
 
-pumpkin.addEventListener("click", () => {
-    trick(pumpkin);
+pumpkin.addEventListener("click", (event) => {
+    event.preventDefault()
+    chosen === pumpkin ? treat(pumpkin) : trick(pumpkin);
 });
 
-zombie.addEventListener("click", () => {
-    trick(zombie);
+zombie.addEventListener("click", (event) => {
+    event.preventDefault()
+    chosen === zombie ? treat(zombie) : trick(zombie);
 });
 
-ghost.addEventListener("click", () => {
-    treat(ghost);
+ghost.addEventListener("click", (event) => {
+    event.preventDefault()
+    chosen === ghost ? treat(ghost) : trick(ghost);
 });
 
-vampire.addEventListener("click", () => {
-    trick(vampire);
+vampire.addEventListener("click", (event) => {
+    event.preventDefault()
+    chosen === vampire ? treat(vampire) : trick(vampire);
 });
 
-/* the play again button refreshes the page, so its not going to work on codepen.
+const chosen = allElements[Math.floor(Math.random() * allElements.length)];
+
+/* the play again button refreshes the page, so its not going to work on codepen. */
 
 btn.addEventListener('click', ()=>{
     window.location.reload()
 }) 
-
-*/
