@@ -28,27 +28,15 @@ const treat = (element) => {
 };
 
 
-// event handlers
-// receiving the callback of trick() or treat() depending on 'chosen'
-pumpkin.addEventListener("click", (event) => {
-    event.preventDefault()
-    chosen === pumpkin ? treat(pumpkin) : trick(pumpkin);
-});
+function handleClick(event, element) {
+    event.preventDefault();
+    chosen === element ? treat(element) : trick(element);
+}
 
-zombie.addEventListener("click", (event) => {
-    event.preventDefault()
-    chosen === zombie ? treat(zombie) : trick(zombie);
-});
-
-ghost.addEventListener("click", (event) => {
-    event.preventDefault()
-    chosen === ghost ? treat(ghost) : trick(ghost);
-});
-
-vampire.addEventListener("click", (event) => {
-    event.preventDefault()
-    chosen === vampire ? treat(vampire) : trick(vampire);
-});
+pumpkin.addEventListener("click", (event) => handleClick(event, pumpkin));
+zombie.addEventListener("click", (event) => handleClick(event, zombie));
+ghost.addEventListener("click", (event) => handleClick(event, ghost));
+vampire.addEventListener("click", (event) => handleClick(event, vampire));
 
 // randomly selects an element (ghoul)
 const chosen = allElements[Math.floor(Math.random() * allElements.length)];
